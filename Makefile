@@ -41,9 +41,14 @@ migrate_data:
 		DB_NAME=$$(grep MYSQL_DATABASE ./srcs/.env | cut -d "=" -f2); \
 		cat ./srcs/data/wordpress.sql | docker exec -i mariadb mariadb -u root -p$$DB_PASS $$DB_NAME \
 	'
-
-
+hosts:
+	@echo "🛠  Adding plashkar.42.fr to /etc/hosts..."
+	@if ! grep -q "plashkar.42.fr" /etc/hosts; then \
+		echo "127.0.0.1 plashkar.42.fr" | sudo tee -a /etc/hosts > /dev/null && \
+		echo "✅  Added plashkar.42.fr to /etc/hosts"; \
+	else \
+		echo "✅  plashkar.42.fr already exists in /etc/hosts"; \
+	fi
 	
 
-
-.phony: logs status start stop re ResetAll clean up all
+.phony: hosts migrate_data logs status start stop re ResetAll clean up all
