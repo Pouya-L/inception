@@ -31,6 +31,19 @@ status:
 logs:
 	docker compose -f $(DOCKER_COMPOSE) logs
 
+migrate_data:
+	@echo "📦 Copying Wordpress files..."
+	cp -a ./srcs/data/wp/html/. /home/plashkar/data/wordpress/
+	chown -R www-data:www-data /home/plashkar/data/wordpress
+	@echo "🗄 Importing MariaDB dump into container..."
+	@sh -c '\
+		DB_PASS=$$(grep DB_ROOT_PASSWORD ./srcs/.env | cut -d "=" -f2); \
+		DB_NAME=$$(grep MYSQL_DATABASE ./srcs/.env | cut -d "=" -f2); \
+		cat ./srcs/data/wordpress.sql | docker exec -i mariadb mariadb -u root -p$$DB_PASS $$DB_NAME \
+	'
+
+
+	
 
 
 .phony: logs status start stop re ResetAll clean up all
