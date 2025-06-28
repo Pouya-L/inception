@@ -43,23 +43,23 @@ This project sets up a **WordPress website with MariaDB and Nginx** using Docker
 ```
 ├── Makefile
 └── srcs/
-├── docker-compose.yml
-├── requirements/
-│ ├── mariadb/
-│ │ ├── Dockerfile
-│ │ └── tools/
-│ │ └── entrypoint.sh
-│ ├── wordpress/
-│ │ ├── Dockerfile
-│ │ └── tools/
-│ │ └── setup.sh
-│ └── nginx/
-│ ├── Dockerfile
-│ └── conf/
-│ └── default.conf
-└── data/
-├── mariadb/
-└── wordpress/
+   ├── docker-compose.yml
+   ├── requirements/
+   │  ├── mariadb/
+   │     ├── Dockerfile
+   │  │     └── tools/
+   │  │        └── entrypoint.sh
+   │  ├── wordpress/
+   │  │  ├── Dockerfile
+   │  │  └── tools/
+   │  │     └── setup.sh
+   │  └── nginx/
+   │     ├── Dockerfile
+   │     └── conf/
+   │        └── default.conf
+   └── data/
+      ├── mariadb/
+      └── wordpress/
 ```
 
 ---
