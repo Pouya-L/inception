@@ -65,11 +65,17 @@ This project sets up a **WordPress website with MariaDB and Nginx** using Docker
 ---
 ## 🚀 **Usage**
 
-`make up` # Build and start containers
-`make logs` # View logs
-`make stop` # Stop containers
-`make start` # Start stopped containers
-`make clean` # Remove containers and images (keeps data)
-`make ResetAll` # Full cleanup including volumes
-`make migrate_data` # Migrate pre-saved SQL and Wordpress files
+`make up`: Build and start containers
+
+`make logs`: View logs
+
+`make stop`: Stop containers
+
+`make start`: Start stopped containers
+
+`make clean`: Remove containers and images (keeps data)
+
+`make ResetAll`: Full cleanup including volumes
+
+`make migrate_data`: Migrate pre-saved SQL and Wordpress files
 
