@@ -40,6 +40,7 @@ This project sets up a **WordPress website with MariaDB and Nginx** using Docker
 ---
 
 ## 📂 **Project Structure**
+```
 ├── Makefile
 └── srcs/
 ├── docker-compose.yml
@@ -59,6 +60,7 @@ This project sets up a **WordPress website with MariaDB and Nginx** using Docker
 └── data/
 ├── mariadb/
 └── wordpress/
+```
 
 ---
 ## 🚀 **Usage**
