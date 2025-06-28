@@ -18,6 +18,7 @@ volumes:
 
 services:
   mariadb:
+    image: mariadb
     container_name: mariadb
     build:
       context: ./requirements/mariadb
@@ -32,6 +33,7 @@ services:
       - inception
 
   wordpress:
+    image: wordpress
     container_name: wordpress
     build:
       context: ./requirements/wordpress
@@ -41,13 +43,14 @@ services:
       - wordpress:/var/www/html
     depends_on:
       - mariadb
-    restart: on-failure
+    restart: on-failurehttps://meta.intra.42.fr/
     expose:
       - "9000"
     networks:
       - inception
 
   nginx:
+    image: nginx
     container_name: nginx
     build:
       context: ./requirements/nginx
