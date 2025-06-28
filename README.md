@@ -47,8 +47,8 @@ This project sets up a **WordPress website with MariaDB and Nginx** using Docker
    ├── requirements/
    │  ├── mariadb/
    │     ├── Dockerfile
-   │  │     └── tools/
-   │  │        └── entrypoint.sh
+   │  │  └── tools/
+   │  │     └── entrypoint.sh
    │  ├── wordpress/
    │  │  ├── Dockerfile
    │  │  └── tools/
