@@ -61,6 +61,16 @@ This project sets up a **WordPress website with MariaDB and Nginx** using Docker
       ├── mariadb/
       └── wordpress/
 ```
+---
+
+## 💡 **Additional Notes**
+
+- `.env` file stores secrets and environment variables.
+- `wp-config.php` is auto-generated during container startup.
+- The setup ensures compliance with **42 subject evaluation** requiring:
+  - No unprotected root access
+  - Proper persistent volumes
+  - TLS-enabled web server
 
 ---
 ## 🚀 **Usage**
